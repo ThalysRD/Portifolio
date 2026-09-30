@@ -1,12 +1,178 @@
-import type { Localized } from '../core/i18n';
-export type ThemeId='origin'|'contracts'|'camp'|'ring'|'ranking'|'crew'|'final';
-export interface Phase{id:string;order:number;themeId:ThemeId;chapterTitle:Localized;subtitle:Localized;projectIds:string[];skillIds:string[];panel:{title:Localized;body:Localized}}
-export const journey:Phase[]=[
-{id:'origin',order:1,themeId:'origin',chapterTitle:{'pt-BR':'Origem',en:'Origin'},subtitle:{'pt-BR':'Primeiros passos no campus',en:'First steps on campus'},projectIds:[],skillIds:['ts','react'],panel:{title:{'pt-BR':'Tudo começa com uma descoberta.',en:'It starts with a discovery.'},body:{'pt-BR':'TODO · Conte como começou a programar, sua formação e o primeiro projeto que fez você querer continuar. Assim como no treino, dominar os fundamentos abriu espaço para desafios maiores.',en:'TODO · Tell how you started programming, your education and the first project that made you want to continue. As in training, mastering the fundamentals made room for bigger challenges.'}}},
-{id:'contracts',order:2,themeId:'contracts',chapterTitle:{'pt-BR':'Contratos',en:'Contracts'},subtitle:{'pt-BR':'Problemas reais. Código de verdade.',en:'Real problems. Real code.'},projectIds:[],skillIds:['node','sql'],panel:{title:{'pt-BR':'Cada projeto, uma missão.',en:'Every project, a mission.'},body:{'pt-BR':'TODO · Os contratos abaixo são exemplos. Substitua-os pelos projetos que melhor representam seu trabalho.',en:'TODO · The contracts below are examples. Replace them with projects that best represent your work.'}}},
-{id:'camp',order:3,themeId:'camp',chapterTitle:{'pt-BR':'Acampamento',en:'Camp'},subtitle:{'pt-BR':'Histórias ao redor da fogueira',en:'Stories around the campfire'},projectIds:[],skillIds:['git'],panel:{title:{'pt-BR':'Uma pausa para contar histórias.',en:'A pause to tell stories.'},body:{'pt-BR':'TODO · Registre sua trajetória em ordem cronológica, pessoas que marcaram sua carreira e o que aprendeu com elas. Fora da tela, jogos e Muay Thai fazem parte da minha rotina.',en:'TODO · Record your journey in chronological order, people who shaped your career and what you learned from them. Away from the screen, games and Muay Thai are part of my routine.'}}},
-{id:'ring',order:4,themeId:'ring',chapterTitle:{'pt-BR':'O Ringue',en:'The Ring'},subtitle:{'pt-BR':'Disciplina dentro e fora do código',en:'Discipline inside and outside the code'},projectIds:['orbit'],skillIds:['ts','git'],panel:{title:{'pt-BR':'O desafio que me fez crescer.',en:'The challenge that made me grow.'},body:{'pt-BR':'TODO · Descreva seu maior desafio técnico, as decisões tomadas e o resultado. O Muay Thai me lembra de treinar os fundamentos, manter o foco sob pressão e aprender a cada round.',en:'TODO · Describe your biggest technical challenge, decisions and outcome. Muay Thai reminds me to train the fundamentals, stay focused under pressure and learn from every round.'}}},
-{id:'ranking',order:5,themeId:'ranking',chapterTitle:{'pt-BR':'Ranking Egoísta',en:'Ego Ranking'},subtitle:{'pt-BR':'Encontre sua arma principal',en:'Find your strongest weapon'},projectIds:[],skillIds:['design','react'],panel:{title:{'pt-BR':'Minha arma é conectar ideias.',en:'My weapon is connecting ideas.'},body:{'pt-BR':'TODO · Explique seu diferencial com exemplos concretos. As notas abaixo são exemplos ilustrativos, não avaliações verificadas.',en:'TODO · Explain your differentiator with concrete examples. The scores below are illustrative examples, not verified assessments.'}}},
-{id:'crew',order:6,themeId:'crew',chapterTitle:{'pt-BR':'A Sociedade',en:'The Fellowship'},subtitle:{'pt-BR':'A jornada é melhor em equipe',en:'The journey is better together'},projectIds:[],skillIds:['git','design'],panel:{title:{'pt-BR':'Ninguém chega longe sozinho.',en:'Nobody goes far alone.'},body:{'pt-BR':'TODO · Adicione contribuições open source, trabalho em equipe e colaborações. Gosto de histórias em que pessoas diferentes unem suas forças para construir algo maior.',en:'TODO · Add open-source contributions, teamwork and collaborations. I enjoy stories where different people join forces to build something greater.'}}},
-{id:'final',order:7,themeId:'final',chapterTitle:{'pt-BR':'A Maleta',en:'The Briefcase'},subtitle:{'pt-BR':'O próximo capítulo é nosso',en:'The next chapter is ours'},projectIds:[],skillIds:[],panel:{title:{'pt-BR':'Vamos conversar?',en:'Let’s talk?'},body:{'pt-BR':'O próximo capítulo ainda não foi escrito.',en:'The next chapter has not been written yet.'}}},
+import type { Localized } from "../core/i18n";
+export type ThemeId =
+  | "origin"
+  | "contracts"
+  | "camp"
+  | "ring"
+  | "ranking"
+  | "crew"
+  | "final";
+export interface Phase {
+  id: string;
+  order: number;
+  themeId: ThemeId;
+  chapterTitle: Localized;
+  subtitle: Localized;
+  projectIds: string[];
+  skillIds: string[];
+  panel: { title: Localized; body: Localized };
+}
+export const journey: Phase[] = [
+  {
+    id: "origin",
+    order: 1,
+    themeId: "origin",
+    chapterTitle: { "pt-BR": "Origem", en: "Origin" },
+    subtitle: {
+      "pt-BR": "Primeiros passos no campus",
+      en: "First steps on campus",
+    },
+    projectIds: [],
+    skillIds: ["ts", "react"],
+    panel: {
+      title: {
+        "pt-BR": "Tudo começa com uma descoberta.",
+        en: "It starts with a discovery.",
+      },
+      body: {
+        "pt-BR":
+          "TODO · Conte como começou a programar, sua formação e o primeiro projeto que fez você querer continuar. Assim como no treino, dominar os fundamentos abriu espaço para desafios maiores.",
+        en: "TODO · Tell how you started programming, your education and the first project that made you want to continue. As in training, mastering the fundamentals made room for bigger challenges.",
+      },
+    },
+  },
+  {
+    id: "contracts",
+    order: 2,
+    themeId: "contracts",
+    chapterTitle: { "pt-BR": "Contratos", en: "Contracts" },
+    subtitle: {
+      "pt-BR": "Problemas reais. Código de verdade.",
+      en: "Real problems. Real code.",
+    },
+    projectIds: [],
+    skillIds: ["node", "sql"],
+    panel: {
+      title: {
+        "pt-BR": "Cada projeto, uma missão.",
+        en: "Every project, a mission.",
+      },
+      body: {
+        "pt-BR":
+          "TODO · Os contratos abaixo são exemplos. Substitua-os pelos projetos que melhor representam seu trabalho.",
+        en: "TODO · The contracts below are examples. Replace them with projects that best represent your work.",
+      },
+    },
+  },
+  {
+    id: "camp",
+    order: 3,
+    themeId: "camp",
+    chapterTitle: { "pt-BR": "Acampamento", en: "Camp" },
+    subtitle: {
+      "pt-BR": "Histórias ao redor da fogueira",
+      en: "Stories around the campfire",
+    },
+    projectIds: [],
+    skillIds: ["git"],
+    panel: {
+      title: {
+        "pt-BR": "Uma pausa para contar histórias.",
+        en: "A pause to tell stories.",
+      },
+      body: {
+        "pt-BR":
+          "TODO · Registre sua trajetória em ordem cronológica, pessoas que marcaram sua carreira e o que aprendeu com elas. Fora da tela, jogos e Muay Thai fazem parte da minha rotina.",
+        en: "TODO · Record your journey in chronological order, people who shaped your career and what you learned from them. Away from the screen, games and Muay Thai are part of my routine.",
+      },
+    },
+  },
+  {
+    id: "ring",
+    order: 4,
+    themeId: "ring",
+    chapterTitle: { "pt-BR": "O Ringue", en: "The Ring" },
+    subtitle: {
+      "pt-BR": "Disciplina dentro e fora do código",
+      en: "Discipline inside and outside the code",
+    },
+    projectIds: ["orbit"],
+    skillIds: ["ts", "git"],
+    panel: {
+      title: {
+        "pt-BR": "O desafio que me fez crescer.",
+        en: "The challenge that made me grow.",
+      },
+      body: {
+        "pt-BR":
+          "TODO · Descreva seu maior desafio técnico, as decisões tomadas e o resultado. O Muay Thai me lembra de treinar os fundamentos, manter o foco sob pressão e aprender a cada round.",
+        en: "TODO · Describe your biggest technical challenge, decisions and outcome. Muay Thai reminds me to train the fundamentals, stay focused under pressure and learn from every round.",
+      },
+    },
+  },
+  {
+    id: "ranking",
+    order: 5,
+    themeId: "ranking",
+    chapterTitle: { "pt-BR": "Ranking Egoísta", en: "Ego Ranking" },
+    subtitle: {
+      "pt-BR": "Encontre sua arma principal",
+      en: "Find your strongest weapon",
+    },
+    projectIds: [],
+    skillIds: ["design", "react"],
+    panel: {
+      title: {
+        "pt-BR": "Minha arma é conectar ideias.",
+        en: "My weapon is connecting ideas.",
+      },
+      body: {
+        "pt-BR":
+          "TODO · Explique seu diferencial com exemplos concretos. As notas abaixo são exemplos ilustrativos, não avaliações verificadas.",
+        en: "TODO · Explain your differentiator with concrete examples. The scores below are illustrative examples, not verified assessments.",
+      },
+    },
+  },
+  {
+    id: "crew",
+    order: 6,
+    themeId: "crew",
+    chapterTitle: { "pt-BR": "A Sociedade", en: "The Fellowship" },
+    subtitle: {
+      "pt-BR": "A jornada é melhor em equipe",
+      en: "The journey is better together",
+    },
+    projectIds: [],
+    skillIds: ["git", "design"],
+    panel: {
+      title: {
+        "pt-BR": "Ninguém chega longe sozinho.",
+        en: "Nobody goes far alone.",
+      },
+      body: {
+        "pt-BR":
+          "TODO · Adicione contribuições open source, trabalho em equipe e colaborações. Gosto de histórias em que pessoas diferentes unem suas forças para construir algo maior.",
+        en: "TODO · Add open-source contributions, teamwork and collaborations. I enjoy stories where different people join forces to build something greater.",
+      },
+    },
+  },
+  {
+    id: "final",
+    order: 7,
+    themeId: "final",
+    chapterTitle: { "pt-BR": "A Maleta", en: "The Briefcase" },
+    subtitle: {
+      "pt-BR": "O próximo capítulo é nosso",
+      en: "The next chapter is ours",
+    },
+    projectIds: [],
+    skillIds: [],
+    panel: {
+      title: { "pt-BR": "Vamos conversar?", en: "Let’s talk?" },
+      body: {
+        "pt-BR": "O próximo capítulo ainda não foi escrito.",
+        en: "The next chapter has not been written yet.",
+      },
+    },
+  },
 ];
