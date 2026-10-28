@@ -73,11 +73,4 @@ export const certificates: Record<string, Certificate[]> = {
       en: "Publication certificate · Revista FT · 30 Apr 2026",
     },
   ],
-  secitex: [
-    {
-      file: "secitex-2025",
-      pt: "VII SECITEX · Participação · 24 h · outubro de 2025",
-      en: "VII SECITEX · Participation · 24 h · October 2025",
-    },
-  ],
 };
