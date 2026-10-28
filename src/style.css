@@ -1005,10 +1005,18 @@ a:focus-visible,
   padding: 0;
   margin: 16px 0;
 }
+.project-links {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 .project-card .button {
-  margin: auto 0 0;
-  align-self: flex-start;
+  margin: 0;
   font-size: 13px;
+}
+.project-shot {
+  object-position: top left;
 }
 .journey-intro {
   border-top: 1px solid var(--line);

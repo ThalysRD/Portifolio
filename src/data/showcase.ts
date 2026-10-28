@@ -38,6 +38,7 @@ interface ShowcaseProject {
   contribution: Copy[];
   stack: string[];
   repo: string;
+  demo?: string;
   image?: { file: string; alt: Copy };
 }
 
@@ -66,12 +67,23 @@ export const showcase: ShowcaseProject[] = [
         "Paginated queries and batch processing for records that arrive after periods offline.",
       ),
       c(
+        "32 testes automatizados (Jest e Supertest) e documentação interativa com Swagger.",
+        "32 automated tests (Jest and Supertest) and interactive Swagger documentation.",
+      ),
+      c(
         "O sistema foi avaliado por banca e virou artigo publicado na Revista FT (2026).",
         "The system was evaluated by a panel and published as an article in Revista FT (2026).",
       ),
     ],
-    stack: ["Node.js", "Express", "PostgreSQL", "API REST", "ESP32"],
+    stack: ["Node.js", "Express", "PostgreSQL", "Jest", "Swagger"],
     repo: "https://github.com/ThalysRD/rfid-server",
+    image: {
+      file: "./assets/projects/api-rfid.png",
+      alt: c(
+        "Documentação Swagger da API RFID com as rotas de leituras.",
+        "Swagger documentation for the RFID API showing the readings routes.",
+      ),
+    },
   },
   {
     id: "e-play",
@@ -83,20 +95,28 @@ export const showcase: ShowcaseProject[] = [
     ),
     contribution: [
       c(
-        "Implementei cadastro, login, sessões, ativação de conta e recuperação de senha.",
-        "Implemented sign-up, login, sessions, account activation and password recovery.",
+        "Maior contribuidor da equipe: cerca de 110 dos 180 commits e 30 dos 43 pull requests.",
+        "Top contributor on the team: about 110 of 180 commits and 30 of 43 pull requests.",
       ),
       c(
-        "Criei as rotas de busca e de anúncios e contribuí no carrinho e nas regras de compra.",
-        "Built the search and listing routes and contributed to the cart and checkout rules.",
+        "Base do projeto: migrações do banco, Docker e testes de integração com Jest.",
+        "Project foundations: database migrations, Docker and integration tests with Jest.",
       ),
       c(
-        "Upload de imagens (Firebase Storage), envio de e-mails e ambiente com Docker.",
-        "Image uploads (Firebase Storage), transactional e-mail and a Docker setup.",
+        "Login e sessões, ativação de conta e recuperação de senha por e-mail, anúncios, busca e finalização da compra.",
+        "Login and sessions, e-mail account activation and password recovery, listings, search and checkout.",
       ),
     ],
     stack: ["Next.js", "React", "Node.js", "PostgreSQL", "Docker", "Jest"],
     repo: "https://github.com/ThalysRD/e-play",
+    demo: "https://e-play-inky.vercel.app",
+    image: {
+      file: "./assets/projects/e-play.jpg",
+      alt: c(
+        "Catálogo do E-Play com anúncios de jogos e consoles usados.",
+        "E-Play catalogue with listings of used games and consoles.",
+      ),
+    },
   },
   {
     id: "tfc",
@@ -129,7 +149,7 @@ export function showcaseHtml(l: Lang, heading = "h2") {
   const cards = showcase
     .map(
       (p) =>
-        `<article class="project-card">${p.image ? `<img class="project-shot" src="${p.image.file}" alt="${esc(p.image.alt[l])}" loading="lazy">` : ""}<p class="eyebrow">${esc(p.label[l])}</p><h3>${esc(p.title[l])}</h3><p class="project-problem">${esc(p.problem[l])}</p><ul class="project-points">${p.contribution.map((x) => `<li>${esc(x[l])}</li>`).join("")}</ul><ul class="tags">${p.stack.map((s) => `<li>${esc(s)}</li>`).join("")}</ul><a class="button" href="${p.repo}" target="_blank" rel="noopener">${l === "pt" ? "Ver código no GitHub" : "View code on GitHub"} →</a></article>`,
+        `<article class="project-card">${p.image ? `<img class="project-shot" src="${p.image.file}" alt="${esc(p.image.alt[l])}" loading="lazy">` : ""}<p class="eyebrow">${esc(p.label[l])}</p><h3>${esc(p.title[l])}</h3><p class="project-problem">${esc(p.problem[l])}</p><ul class="project-points">${p.contribution.map((x) => `<li>${esc(x[l])}</li>`).join("")}</ul><ul class="tags">${p.stack.map((s) => `<li>${esc(s)}</li>`).join("")}</ul><div class="project-links">${p.demo ? `<a class="button primary" href="${p.demo}" target="_blank" rel="noopener">${l === "pt" ? "Ver funcionando" : "Live demo"} →</a>` : ""}<a class="button" href="${p.repo}" target="_blank" rel="noopener">${l === "pt" ? "Ver código" : "View code"} →</a></div></article>`,
     )
     .join("");
   return `<div class="showcase-head"><p class="eyebrow">${l === "pt" ? "PROJETOS" : "PROJECTS"}</p><${heading}>${l === "pt" ? "O que eu já construí" : "What I have built"}</${heading}></div><div class="project-grid">${cards}</div>`;

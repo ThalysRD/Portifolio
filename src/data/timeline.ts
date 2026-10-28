@@ -141,14 +141,14 @@ export const milestones: Milestone[] = [
     summary: c("Marketplace de jogos usados", "Used-games marketplace"),
     body: [
       c(
-        "E-Play é um marketplace de jogos usados desenvolvido em equipe no terceiro semestre do IFRN, para fins didáticos. Contribuí para autenticação, cadastro, sessões, ativação de conta, recuperação de senha, anúncios, busca, carrinho e fluxo de compra, integrando interface, API e banco. A stack reúne Next.js, React, Node.js, PostgreSQL, Docker e testes com Jest.",
-        "E-Play is a used-games marketplace built by a team during the third semester at IFRN, for educational purposes. I contributed to authentication, registration, sessions, account activation, password recovery, listings, search, cart and checkout, integrating interface, API and database. The stack includes Next.js, React, Node.js, PostgreSQL, Docker and Jest.",
+        "E-Play é um marketplace de jogos usados desenvolvido em equipe no terceiro semestre do IFRN, para fins didáticos. Fui o maior contribuidor da equipe, com cerca de 110 dos 180 commits: montei a base do projeto (migrações do banco, Docker e testes de integração) e desenvolvi login e sessões, ativação de conta e recuperação de senha por e-mail, anúncios, busca e a finalização da compra. A stack reúne Next.js, React, Node.js, PostgreSQL, Docker e testes com Jest. O projeto está no ar.",
+        "E-Play is a used-games marketplace built by a team during the third semester at IFRN, for educational purposes. I was the team’s top contributor, with about 110 of 180 commits: I set up the project foundations (database migrations, Docker and integration tests) and built login and sessions, e-mail account activation and password recovery, listings, search and checkout. The stack includes Next.js, React, Node.js, PostgreSQL, Docker and Jest. The project is live.",
       ),
     ],
     tags: ["Next.js", "React", "Node.js", "PostgreSQL", "Docker", "Jest"],
     link: {
-      url: "https://github.com/ThalysRD/e-play",
-      label: c("Ver E-Play no GitHub", "View E-Play on GitHub"),
+      url: "https://e-play-inky.vercel.app",
+      label: c("Ver o E-Play funcionando", "See E-Play live"),
     },
   },
   {
