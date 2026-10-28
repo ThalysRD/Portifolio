@@ -12,6 +12,7 @@ import {
   timelineFallback,
   type Lang,
 } from "./data/timeline";
+import { hero, showcaseHtml } from "./data/showcase";
 const $ = <T extends HTMLElement>(id: string) =>
   document.getElementById(id) as T;
 let lang: Lang = "pt",
@@ -71,7 +72,7 @@ function sync() {
 const dialog = new Dialog(() => sync());
 function contacts() {
   dialog.open(
-    `<p class="eyebrow">THALYS RODRIGUES</p><h2 id="panel-title">${tr("Vamos construir o próximo capítulo?", "Let’s build the next chapter?")}</h2><p>${tr("Busco uma oportunidade de estágio ou júnior em desenvolvimento de software, com foco em Backend e Full Stack.", "I am looking for an internship or junior software development role, focused on Backend and Full Stack.")}</p><p>${tr("Sua vaga pede uma habilidade que ainda não aparece aqui? Estou disposto a aprender, desenvolver essa competência e contribuir com a equipe. Vamos conversar.", "Does your role call for a skill that is not listed here yet? I am willing to learn, develop that skill and contribute to the team. Let’s talk.")}</p><div class="contact-links"><a class="button primary" href="mailto:tgbr66@gmail.com">tgbr66@gmail.com</a><a class="button" href="https://github.com/ThalysRD" target="_blank" rel="noopener">GitHub</a></div>`,
+    `<p class="eyebrow">THALYS RODRIGUES</p><h2 id="panel-title">${tr("Vamos conversar?", "Let’s talk?")}</h2><p>${tr("Busco uma vaga de desenvolvedor júnior (Back-end ou Full Stack), remota ou em Natal/RN. Posso começar agora.", "I am looking for a junior developer role (Back end or Full Stack), remote or in Natal, Brazil. I can start right away.")}</p><p>${tr("Sua vaga pede uma habilidade que ainda não aparece aqui? Estou disposto a aprender, desenvolver essa competência e contribuir com a equipe. Vamos conversar.", "Does your role call for a skill that is not listed here yet? I am willing to learn, develop that skill and contribute to the team. Let’s talk.")}</p><div class="contact-links"><a class="button primary" href="mailto:tgbr66@gmail.com">tgbr66@gmail.com</a><a class="button" href="https://www.linkedin.com/in/thalysrd/" target="_blank" rel="noopener">LinkedIn</a><a class="button" href="https://github.com/ThalysRD" target="_blank" rel="noopener">GitHub</a><a class="button" href="./assets/cv/Curriculo_Thalys_Rodrigues.pdf" download>${tr("Baixar currículo", "Download résumé")}</a></div>`,
   );
 }
 function openMemory(i: number) {
@@ -129,21 +130,17 @@ function render() {
     ? tr("Voltar à caminhada", "Back to the walk")
     : tr("Versão em texto", "Text version");
   $("contact").textContent = tr("Vamos conversar", "Let’s talk");
-  $("intro-label").textContent = tr(
-    "UMA LINHA DO TEMPO PARA EXPLORAR",
-    "A TIMELINE TO EXPLORE",
-  );
-  $("headline").textContent = tr(
-    "Cada passo, uma história.",
-    "Every step has a story.",
-  );
-  $("intro-text").textContent = tr(
-    "Sou Thalys. Caminhe comigo pelos estudos, projetos e pessoas que fazem parte da minha trajetória.",
-    "I’m Thalys. Walk with me through the studies, projects and people that have shaped my journey.",
-  );
-  $("role").textContent = tr(
-    "Aberto a oportunidades. Backend & Full Stack.",
-    "Open to opportunities. Backend & Full Stack.",
+  $("intro-label").textContent = hero.eyebrow[lang];
+  $("headline").textContent = hero.headline[lang];
+  $("intro-text").textContent = hero.text[lang];
+  $("role").textContent = hero.status[lang];
+  $("cta-projects").textContent = tr("Ver projetos", "See projects");
+  $("cta-cv").textContent = tr("Baixar currículo", "Download résumé");
+  $("showcase").innerHTML = showcaseHtml(lang);
+  $("journey-label").textContent = tr("TRAJETÓRIA", "JOURNEY");
+  $("journey-title").textContent = tr(
+    "Ou caminhe pela minha trajetória",
+    "Or walk through my journey",
   );
   $("next-note").textContent = tr("Próxima memória →", "Next memory →");
   $("move-label").textContent = tr(

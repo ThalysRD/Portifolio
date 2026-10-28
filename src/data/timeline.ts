@@ -1,5 +1,6 @@
 import { certificates } from "./certificates";
 import { timelineSkills, skillLabel } from "./timelineSkills";
+import { showcaseHtml } from "./showcase";
 
 export type Lang = "pt" | "en";
 
@@ -62,26 +63,33 @@ export const milestones: Milestone[] = [
   {
     id: "embarcatech",
     date: c("ABR 2025 — ABR 2026", "APR 2025 — APR 2026"),
-    title: c("Código encontra o mundo real", "Code meets the real world"),
+    title: c(
+      "API em Node.js para equipes em campo",
+      "A Node.js API for field teams",
+    ),
     summary: c(
-      "Residência EmbarcaTech · Projeto RFID",
-      "EmbarcaTech residency · RFID project",
+      "Residência EmbarcaTech · 1.040 h · remunerada",
+      "EmbarcaTech residency · 1,040 h · paid",
     ),
     body: [
       c(
-        "Concluí a residência tecnológica EmbarcaTech, com 1.040 horas de atividades entre abril de 2025 e abril de 2026. Participei de um projeto aplicado de monitoramento por RFID, conectando desenvolvimento de software e hardware. Minha contribuição envolveu firmware e API.",
-        "I completed the 1,040-hour EmbarcaTech residency between April 2025 and April 2026. I participated in an applied RFID monitoring project, connecting software and hardware. My contribution involved firmware and an API.",
+        "Entre abril de 2025 e abril de 2026, fiz a residência tecnológica EmbarcaTech (Softex/IFRN), uma residência remunerada de 1.040 horas. Em equipe, construímos um sistema de monitoramento por RFID para equipes que trabalham em obras remotas.",
+        "From April 2025 to April 2026, I took part in the EmbarcaTech technology residency (Softex/IFRN), a paid 1,040-hour programme. As a team, we built an RFID monitoring system for crews working at remote construction sites.",
       ),
       c(
-        "Trabalhei com ESP32, comunicação serial, armazenamento local, sincronização com servidor, API e PostgreSQL. A conectividade limitada exigiu atenção à persistência dos dados, confiabilidade e tratamento de falhas.",
-        "I worked with ESP32, serial communication, local storage, server synchronization, an API and PostgreSQL. Limited connectivity required attention to persistence, reliability and failure handling.",
+        "Minha parte principal foi a API: Node.js e Express recebendo as leituras dos dispositivos, gravando no PostgreSQL, com consultas paginadas e processamento em lote para os registros que chegam depois de períodos sem conexão. Também trabalhei no firmware do ESP32, com armazenamento local e sincronização.",
+        "My main part was the API: Node.js and Express receiving device readings and storing them in PostgreSQL, with paginated queries and batch processing for records that arrive after periods offline. I also worked on the ESP32 firmware, with local storage and synchronisation.",
       ),
       c(
-        "O projeto foi desenvolvido em equipe, avaliado por banca e teve resultado funcional. Os resultados do sistema pertencem ao trabalho coletivo.",
-        "The team project was evaluated by a panel and produced a functional result. The system’s results belong to the collective work.",
+        "O projeto foi avaliado por banca, apresentado à Softex e virou artigo publicado. Os resultados do sistema pertencem ao trabalho coletivo.",
+        "The project was evaluated by a panel, presented to Softex and became a published article. The system’s results belong to the whole team.",
       ),
     ],
-    tags: ["ESP32", "Firmware", "API", "PostgreSQL", "RFID"],
+    tags: ["Node.js", "Express", "PostgreSQL", "API REST", "ESP32"],
+    link: {
+      url: "https://github.com/ThalysRD/rfid-server",
+      label: c("Ver a API no GitHub", "View the API on GitHub"),
+    },
     photos: [
       {
         file: "rfid-conjunto.png",
@@ -95,98 +103,6 @@ export const milestones: Milestone[] = [
         caption: c(
           "Detalhe da montagem do microcontrolador.",
           "A close look at the microcontroller assembly.",
-        ),
-      },
-      {
-        file: "embarcatech-uniforme.png",
-        caption: c(
-          "Eu com o uniforme do EmbarcaTech.",
-          "Me wearing the EmbarcaTech uniform.",
-        ),
-      },
-      {
-        file: "embarcatech-cracha.png",
-        caption: c("Meu crachá da residência.", "My residency badge."),
-      },
-    ],
-  },
-  {
-    id: "secitex",
-    date: c("14 — 16 OUT 2025", "14 — 16 OCT 2025"),
-    title: c(
-      "Ciência, tecnologia e extensão",
-      "Science, technology and outreach",
-    ),
-    summary: c("VII SECITEX · IFRN", "VII SECITEX · IFRN"),
-    body: [
-      c(
-        "Participei da VII Semana de Ciência, Tecnologia e Extensão (SECITEX), realizada de 14 a 16 de outubro de 2025 no IFRN, Campus Natal-Zona Norte. O certificado registra 24 horas de participação.",
-        "I attended the seventh Science, Technology and Outreach Week (SECITEX), held from October 14 to 16, 2025 at IFRN, Natal-Zona Norte campus. The certificate records 24 hours of participation.",
-      ),
-    ],
-    tags: ["SECITEX", "IFRN", "24 horas"],
-  },
-  {
-    id: "partnership",
-    date: c("Durante a residência", "During the residency"),
-    title: c("Construção em equipe", "Building together"),
-    summary: c(
-      "Parceria com a doisA Engenharia",
-      "Partnership with doisA Engenharia",
-    ),
-    body: [
-      c(
-        "A residência também incluiu a parceria público-privada com a doisA Engenharia. Este registro faz parte dessa experiência de aproximação entre formação e um contexto real de aplicação.",
-        "The residency also included a public-private partnership with doisA Engenharia. This photo records that connection between education and a real application context.",
-      ),
-      c(
-        "Essa experiência integra minha formação prática na residência, conectando trabalho em equipe e desenvolvimento aplicado.",
-        "This experience is part of my practical residency training, connecting teamwork and applied development.",
-      ),
-    ],
-    tags: ["EmbarcaTech", "doisA Engenharia", "Colaboração"],
-    photos: [
-      {
-        file: "doisa-parceria.png",
-        caption: c(
-          "Registro da parceria com a doisA Engenharia durante a residência.",
-          "A record of the partnership with doisA Engenharia during the residency.",
-        ),
-      },
-    ],
-  },
-  {
-    id: "laica",
-    date: c("Durante a residência", "During the residency"),
-    title: c("Apresentar também é construir", "Sharing what we built"),
-    summary: c(
-      "Inauguração do laboratório LAICA",
-      "Opening of the LAICA laboratory",
-    ),
-    body: [
-      c(
-        "Na inauguração do laboratório LAICA, participei da apresentação do projeto ao diretor da Softex. As fotos registram esse momento e a presença da equipe.",
-        "At the opening of the LAICA laboratory, I participated in presenting the project to the director of Softex. These photos document the moment and the team.",
-      ),
-      c(
-        "Foi uma oportunidade de compartilhar o trabalho desenvolvido na residência e explicar a solução para além do código.",
-        "It was an opportunity to share our residency work and explain the solution beyond the code.",
-      ),
-    ],
-    tags: ["LAICA", "Softex", "Apresentação"],
-    photos: [
-      {
-        file: "laica-apresentacao.png",
-        caption: c(
-          "Apresentação do projeto na inauguração do laboratório LAICA.",
-          "Presenting the project at the opening of the LAICA laboratory.",
-        ),
-      },
-      {
-        file: "laica-equipe.png",
-        caption: c(
-          "Registro da equipe no laboratório.",
-          "A photo of the team in the laboratory.",
         ),
       },
     ],
@@ -225,14 +141,14 @@ export const milestones: Milestone[] = [
     summary: c("Marketplace de jogos usados", "Used-games marketplace"),
     body: [
       c(
-        "E-Play é um marketplace de jogos usados desenvolvido em equipe no terceiro semestre do IFRN, para fins didáticos. Contribuí para autenticação, cadastro, sessões, ativação de conta, recuperação de senha, anúncios, busca, carrinho e fluxo de compra, integrando interface, API e banco. A stack reúne Next.js, React, Node.js, PostgreSQL, Docker e testes com Jest.",
-        "E-Play is a used-games marketplace built by a team during the third semester at IFRN, for educational purposes. I contributed to authentication, registration, sessions, account activation, password recovery, listings, search, cart and checkout, integrating interface, API and database. The stack includes Next.js, React, Node.js, PostgreSQL, Docker and Jest.",
+        "E-Play é um marketplace de jogos usados desenvolvido em equipe no terceiro semestre do IFRN, para fins didáticos. Fui o maior contribuidor da equipe, com cerca de 110 dos 180 commits: montei a base do projeto (migrações do banco, Docker e testes de integração) e desenvolvi login e sessões, ativação de conta e recuperação de senha por e-mail, anúncios, busca e a finalização da compra. A stack reúne Next.js, React, Node.js, PostgreSQL, Docker e testes com Jest. O projeto está no ar.",
+        "E-Play is a used-games marketplace built by a team during the third semester at IFRN, for educational purposes. I was the team’s top contributor, with about 110 of 180 commits: I set up the project foundations (database migrations, Docker and integration tests) and built login and sessions, e-mail account activation and password recovery, listings, search and checkout. The stack includes Next.js, React, Node.js, PostgreSQL, Docker and Jest. The project is live.",
       ),
     ],
     tags: ["Next.js", "React", "Node.js", "PostgreSQL", "Docker", "Jest"],
     link: {
-      url: "https://github.com/ThalysRD/e-play",
-      label: c("Ver E-Play no GitHub", "View E-Play on GitHub"),
+      url: "https://e-play-inky.vercel.app",
+      label: c("Ver o E-Play funcionando", "See E-Play live"),
     },
   },
   {
@@ -288,9 +204,6 @@ const order = [
   "ifrn",
   "embarcatech",
   "projects",
-  "secitex",
-  "partnership",
-  "laica",
   "publication",
   "ze-resolve",
   "today",
@@ -328,5 +241,5 @@ export function detail(m: Milestone, l: Lang, heading = "h2", modal = true) {
 }
 
 export function timelineFallback(l: Lang = "pt") {
-  return `<div class="reading-head"><p class="eyebrow">THALYS / ${l === "pt" ? "TRAJETÓRIA" : "JOURNEY"}</p><h1>${l === "pt" ? "Minha história, no seu ritmo." : "My story, at your pace."}</h1><p>${l === "pt" ? "Desenvolvedor em formação, com foco em Backend e Full Stack." : "Developer in training, focused on Backend and Full Stack."}</p></div>${milestones.map((milestone) => `<article class="reading-note">${detail(milestone, l, "h2", false)}</article>`).join("")}`;
+  return `<div class="reading-head"><p class="eyebrow">THALYS / ${l === "pt" ? "TRAJETÓRIA" : "JOURNEY"}</p><h1>Thalys Rodrigues</h1><p>${l === "pt" ? "Desenvolvedor Full Stack Júnior · Node.js, React e PostgreSQL · Natal/RN ou remoto." : "Junior Full Stack Developer · Node.js, React and PostgreSQL · Natal, Brazil or remote."}</p><p><a class="button primary" href="./assets/cv/Curriculo_Thalys_Rodrigues.pdf" download>${l === "pt" ? "Baixar currículo" : "Download résumé"}</a><a class="button" href="mailto:tgbr66@gmail.com">tgbr66@gmail.com</a><a class="button" href="https://www.linkedin.com/in/thalysrd/" target="_blank" rel="noopener">LinkedIn</a></p></div><section class="reading-note showcase">${showcaseHtml(l)}</section><h2 class="reading-section-title">${l === "pt" ? "Trajetória" : "Journey"}</h2>${milestones.map((milestone) => `<article class="reading-note">${detail(milestone, l, "h2", false)}</article>`).join("")}`;
 }
