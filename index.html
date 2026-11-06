@@ -1,12 +1,323 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#07100d"><title>Thalys Rodrigues · Desenvolvedor Full Stack Júnior</title><meta name="description" content="Thalys Rodrigues, desenvolvedor Full Stack júnior em Natal/RN: APIs em Node.js, React e PostgreSQL. Residência tecnológica de 1.040 h, Trybe e IFRN. Disponível para vagas remotas ou em Natal."><meta property="og:title" content="Thalys Rodrigues · Desenvolvedor Full Stack Júnior"><meta property="og:description" content="APIs em Node.js, React e PostgreSQL. Disponível para vagas remotas ou em Natal/RN."><meta property="og:image" content="./assets/trajectory/rfid-conjunto.png"><link rel="icon" href="./favicon.svg"></head><body>
-<a class="skip" href="#traditional">Pular para a versão em texto</a>
-<header class="header"><a href="./" class="brand"><span class="monogram">tr.</span><span>THALYS RODRIGUES<small>DESENVOLVEDOR FULL STACK JÚNIOR</small></span></a><nav><button id="language">EN</button><button id="quick">Versão em texto</button><a href="https://github.com/ThalysRD" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/thalysrd/" target="_blank" rel="noopener">LinkedIn</a><button id="contact" class="primary">Vamos conversar</button></nav></header>
-<main id="game-main"><section class="intro"><div><p class="eyebrow" id="intro-label">DESENVOLVEDOR FULL STACK JÚNIOR · NATAL/RN OU REMOTO</p><h1 id="headline">Construo APIs e aplicações web de ponta a ponta.</h1><p id="intro-text">Node.js, React e PostgreSQL. Um ano de residência tecnológica remunerada desenvolvendo em equipe a API de um sistema de monitoramento de equipes em campo, formação Full Stack pela Trybe (1.500 h) e graduação em Sistemas para Internet no IFRN.</p><div class="hero-actions"><a class="button primary" id="cta-projects" href="#showcase">Ver projetos</a><a class="button" id="cta-cv" href="./assets/cv/Curriculo_Thalys_Rodrigues.pdf" download>Baixar currículo</a><a class="button" href="https://github.com/ThalysRD" target="_blank" rel="noopener">GitHub</a></div></div><div class="intro-aside"><span class="status-dot"></span><span id="role">Disponível agora</span></div></section>
-<section class="showcase" id="showcase" tabindex="-1"><!--showcase--></section>
-<div class="journey-intro"><p class="eyebrow" id="journey-label">TRAJETÓRIA</p><h2 id="journey-title">Ou caminhe pela minha trajetória</h2></div>
-<section class="journey" aria-label="Linha do tempo interativa"><div class="world-bar"><span id="current-label">2022 / O COMEÇO</span><span id="read-count" aria-live="polite">0 de 10 memórias abertas</span><button id="restart" title="Voltar ao início">↶ <span>Início</span></button></div>
-<div id="game" tabindex="0" role="region" aria-label="Use as setas ou A e D para caminhar. Pressione E para abrir uma memória."><div id="loading">Preparando a caminhada…</div><div id="notes"></div><div class="walk-hint" id="walk-hint">Clique numa nota para caminhar até ela <span>→</span></div><button id="interact" hidden><kbd>E</kbd><span>Abrir memória</span></button><div class="touch-controls"><button id="left" aria-label="Andar para a esquerda">←</button><button id="right" aria-label="Andar para a direita">→</button></div></div>
-<div class="journey-footer"><div class="key-guide"><kbd>←</kbd><kbd>→</kbd><span id="move-label">ou A / D para caminhar</span><kbd>E</kbd><span id="open-label">para interagir</span></div><button id="next-note">Próxima memória →</button></div></section>
-<nav class="timeline-nav" id="timeline-nav" aria-label="Ir para um marco da trajetória"></nav><footer class="page-footer"><span id="footer-copy">Histórias reais. Aprendizado em movimento.</span><span>2022 — HOJE <i></i> NATAL, RN</span></footer></main>
-<section id="traditional" tabindex="-1"><!--portfolio--></section>
-<dialog id="panel" aria-labelledby="panel-title"><button id="close-panel" aria-label="Fechar">×</button><div id="panel-content"></div></dialog><noscript><style>#game-main,.header nav{display:none}#traditional{display:block}</style></noscript><script type="module" src="/src/main.ts"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thalys Rodrigues · Desenvolvedor Full Stack</title>
+  <meta name="description" content="Thalys Rodrigues, desenvolvedor full stack com foco em backend, em Natal/RN. Projetos, experiência e publicações.">
+  <meta property="og:title" content="Thalys Rodrigues · Desenvolvedor Full Stack">
+  <meta property="og:description" content="APIs e aplicações web de ponta a ponta com Node.js, React e PostgreSQL.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#topo" class="logo"><span class="prompt">&gt;</span> thalys<span>.dev</span><span class="caret">_</span></a>
+      <nav aria-label="Seções">
+        <a href="#sobre">sobre</a>
+        <a href="#projetos">projetos</a>
+        <a href="#experiencia">experiência</a>
+        <a href="#contato" class="nav-cta">contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <!-- HERO -->
+    <canvas id="rain" aria-hidden="true"></canvas>
+    <section class="hero wrap">
+      <p class="boot" aria-hidden="true">jack_in --user thalys --node natal.rn<span class="caret">_</span></p>
+      <p class="status"><span class="dot"></span> Aberto a vagas · tempo integral · presencial ou remoto</p>
+      <h1 class="glitch" data-text="Thalys Rodrigues">Thalys Rodrigues</h1>
+      <p class="headline">Desenvolvedor full stack com foco em backend: <em>APIs</em>, bancos de dados e os apps que conversam com eles.</p>
+      <div class="actions">
+        <a class="btn primary" href="assets/cv/Curriculo_Thalys_Rodrigues.pdf" download>Baixar currículo</a>
+        <a class="btn" href="https://github.com/ThalysRD" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/thalysrd/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="mailto:tgbr66@gmail.com">tgbr66@gmail.com</a>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="section wrap">
+      <header class="section-head">
+        <p class="eyebrow"><span>01</span> sobre</p>
+        <h2>Oi, eu sou o Thalys.</h2>
+      </header>
+      <div class="about">
+        <div class="about-text reveal">
+          <p>Sou desenvolvedor em Natal/RN. Comecei em 2022 com a formação de Desenvolvimento Web da Trybe e hoje curso Tecnologia em Sistemas para Internet no IFRN, com conclusão prevista para 2027.1.</p>
+          <p>Meu trabalho mais completo até aqui foi um ano de residência no EmbarcaTech, construindo em equipe a API de um sistema que monitora equipes em obras sem internet, onde nenhum registro pode se perder. O projeto passou por banca, foi apresentado à Softex e virou artigo publicado.</p>
+          <p>Trabalho principalmente no backend, com Node.js, TypeScript, Python e PostgreSQL, e levo o projeto até a ponta quando preciso, com React, Next.js ou Flutter. Escrevo testes, documento a API e gosto de deixar o caminho fácil para quem vem depois.</p>
+          <p class="personal">Fora do código: jogos, filmes, animes e Muay Thai.</p>
+        </div>
+        <aside class="now reveal" aria-labelledby="now-title">
+          <h3 id="now-title"><span class="dot"></span> agora</h3>
+          <ul>
+            <li>Finalizando o <a href="#ze">Zé Resolve</a>, app de serviços locais com entrega em dez/2026.</li>
+            <li>No 5º período de Sistemas para Internet no IFRN.</li>
+            <li>Procurando minha primeira vaga em tempo integral como dev backend ou full stack, CLT ou PJ.</li>
+          </ul>
+          <p class="now-stack">uso no dia a dia</p>
+          <ul class="tags"><li>Node.js</li><li>TypeScript</li><li>Python</li><li>FastAPI</li><li>Express</li><li>PostgreSQL</li><li>React</li><li>Next.js</li><li>Flutter</li><li>Docker</li><li>Jest</li><li>pytest</li></ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="section wrap">
+      <header class="section-head">
+        <p class="eyebrow"><span>02</span> projetos</p>
+        <h2>Projetos selecionados</h2>
+      </header>
+
+      <article id="ze" class="project ze reveal">
+        <div class="ze-head">
+          <div>
+            <p class="meta"><span class="badge">Reta final</span> IFRN · Projeto Integrador II · 2026 · equipe</p>
+            <h3>Zé Resolve · app de serviços locais</h3>
+            <p class="problem">Conecta quem precisa de um eletricista, encanador ou pintor a profissionais da região: busca por proximidade, agenda publicada pelo profissional, pedido com aceite, chat em tempo real e avaliação no fim do serviço.</p>
+          </div>
+          <ul class="points">
+            <li>Maior contribuidor: 32 dos 38 commits, do app à documentação.</li>
+            <li>API própria em FastAPI com SQLAlchemy e SQLite; o app Flutter consome por REST e WebSocket.</li>
+            <li>Segurança: bcrypt, dados privados cifrados com AES-GCM, HTTPS com fixação de certificado e permissões checadas no servidor.</li>
+            <li>147 testes automatizados (67 na API com pytest, 80 no app) e contrato OpenAPI documentado.</li>
+          </ul>
+        </div>
+
+        <div class="ze-media">
+          <button class="video" type="button" data-video="nUgU5FdD-8o" aria-label="Assistir à demonstração narrada do Zé Resolve">
+            <img src="assets/projects/ze-demo.jpg" alt="" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+            <span class="video-label">demo narrada · 3 min 30 s</span>
+          </button>
+          <div class="phones" role="list">
+            <a class="phone-item" role="listitem" href="assets/projects/ze-cliente.jpg" target="_blank" rel="noopener">
+              <span class="phone"><img src="assets/projects/ze-cliente.jpg" alt="Tela inicial do cliente com busca e categorias de serviço." loading="lazy"></span>
+              <span class="phone-label"><b>cliente</b> busca por categoria</span>
+            </a>
+            <a class="phone-item" role="listitem" href="assets/projects/ze-pedido.jpg" target="_blank" rel="noopener">
+              <span class="phone"><img src="assets/projects/ze-pedido.jpg" alt="Tela de solicitar visita com o serviço Troca da tomada." loading="lazy"></span>
+              <span class="phone-label"><b>cliente</b> pede a visita</span>
+            </a>
+            <a class="phone-item" role="listitem" href="assets/projects/ze-agenda.jpg" target="_blank" rel="noopener">
+              <span class="phone"><img src="assets/projects/ze-agenda.jpg" alt="Agenda do profissional com horários publicados." loading="lazy"></span>
+              <span class="phone-label"><b>profissional</b> publica a agenda</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="ze-foot">
+          <ul class="tags"><li>Flutter</li><li>Dart</li><li>FastAPI</li><li>Python</li><li>SQLAlchemy</li><li>SQLite</li><li>WebSocket</li><li>pytest</li></ul>
+          <div class="links">
+            <a href="https://www.youtube.com/watch?v=nUgU5FdD-8o" target="_blank" rel="noopener">Ver no YouTube →</a>
+            <a href="https://github.com/ThalysRD/Ze-Resolve" target="_blank" rel="noopener">Código →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project featured reveal">
+        <div class="gallery">
+          <a class="shot" href="assets/projects/api-rfid.png" target="_blank" rel="noopener">
+            <img src="assets/projects/api-rfid.png" alt="Documentação Swagger da API RFID com as rotas de leituras." loading="lazy">
+          </a>
+          <div class="gallery-row">
+            <a class="photo" href="assets/projects/rfid-conjunto.jpg" target="_blank" rel="noopener">
+              <img src="assets/projects/rfid-conjunto.jpg" alt="Antena RFID e placa com ESP32, leitor e módulo de cartão SD montados para o projeto." loading="lazy" style="object-position: 50% 82%">
+            </a>
+            <a class="photo" href="assets/projects/rfid-placa.jpg" target="_blank" rel="noopener">
+              <img src="assets/projects/rfid-placa.jpg" alt="Close da placa com o ESP32, o módulo leitor e o módulo de cartão SD para armazenamento offline." loading="lazy">
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <p class="meta">Residência EmbarcaTech · 2025–2026 · equipe</p>
+          <h3>API de monitoramento de equipes em campo</h3>
+          <p class="problem">Equipes em obras remotas registram presença com crachás RFID, muitas vezes sem internet. Nenhum registro pode se perder.</p>
+          <ul class="points">
+            <li>API em Node.js e Express que recebe as leituras dos dispositivos e grava no PostgreSQL.</li>
+            <li>Consultas paginadas e processamento em lote para registros que chegam após períodos offline.</li>
+            <li>32 testes automatizados (Jest + Supertest) e documentação interativa com Swagger.</li>
+            <li>Firmware do ESP32 com armazenamento local e sincronização.</li>
+          </ul>
+          <ul class="tags"><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Jest</li><li>Swagger</li><li>ESP32</li></ul>
+          <div class="links">
+            <a href="https://github.com/ThalysRD/rfid-server" target="_blank" rel="noopener">Código →</a>
+            <a href="https://www.revistaft.com/ft/article/view/657" target="_blank" rel="noopener">Artigo publicado →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project featured reverse reveal">
+        <a class="shot" href="https://e-play-inky.vercel.app" target="_blank" rel="noopener">
+          <img src="assets/projects/e-play.jpg" alt="Catálogo do E-Play com anúncios de jogos e consoles usados." loading="lazy">
+        </a>
+        <div class="project-body">
+          <p class="meta">IFRN · 2025.2 · equipe</p>
+          <h3>E-Play · marketplace de jogos usados</h3>
+          <p class="problem">Uma loja on-line completa: contas de usuário, anúncios, busca, carrinho e compra. No ar.</p>
+          <ul class="points">
+            <li>Maior contribuidor: ~110 dos 180 commits e 30 dos 43 pull requests.</li>
+            <li>Base do projeto: migrações do banco, Docker e testes de integração.</li>
+            <li>Login e sessões, ativação de conta e recuperação de senha por e-mail, anúncios, busca e checkout.</li>
+          </ul>
+          <ul class="tags"><li>Next.js</li><li>React</li><li>Node.js</li><li>PostgreSQL</li><li>Docker</li><li>Jest</li></ul>
+          <div class="links">
+            <a href="https://e-play-inky.vercel.app" target="_blank" rel="noopener">Ver no ar →</a>
+            <a href="https://github.com/ThalysRD/e-play" target="_blank" rel="noopener">Código →</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="project-grid single">
+
+        <article class="project card tfc reveal">
+          <div class="tfc-text">
+            <p class="meta">Trybe · projeto de formação em backend</p>
+            <h3>Trybe Futebol Clube</h3>
+            <p class="problem">API de um campeonato de futebol: login, partidas com placar ao vivo e classificação geral, de mandantes e de visitantes, calculada a partir dos jogos encerrados. Desenvolvi o backend para a interface React fornecida pela Trybe.</p>
+            <ul class="points">
+              <li>Login com bcrypt e JWT; rotas de escrita validam o token.</li>
+              <li>Classificação com pontos, saldo, gols e aproveitamento, ordenada por cinco critérios de desempate.</li>
+              <li>Migrations, models e associações com Sequelize e MySQL; testes HTTP com Mocha, Chai e Sinon; Docker Compose.</li>
+            </ul>
+            <ul class="tags"><li>TypeScript</li><li>Express</li><li>Sequelize</li><li>MySQL</li><li>JWT</li><li>Mocha</li><li>Docker</li></ul>
+            <div class="links">
+              <a href="https://github.com/ThalysRD/Trybe-Futebol-Clube" target="_blank" rel="noopener">Código →</a>
+            </div>
+          </div>
+
+          <figure class="api-window" aria-label="Resposta real da rota GET /leaderboard com os dados de demonstração do projeto">
+            <div class="api-bar">
+              <span class="method">GET</span><span class="path">/leaderboard</span><span class="code">200 OK</span>
+            </div>
+            <div class="api-body">
+              <table>
+                <thead><tr><th>#</th><th>time</th><th>P</th><th>J</th><th>V</th><th>SG</th><th>%</th></tr></thead>
+                <tbody>
+                <tr><td>1</td><td>Palmeiras</td><td>13</td><td>5</td><td>4</td><td>+12</td><td>86.67</td></tr>
+                <tr><td>2</td><td>Corinthians</td><td>12</td><td>5</td><td>4</td><td>+9</td><td>80.00</td></tr>
+                <tr><td>3</td><td>Santos</td><td>11</td><td>5</td><td>3</td><td>+6</td><td>73.33</td></tr>
+                <tr><td>4</td><td>Grêmio</td><td>10</td><td>5</td><td>3</td><td>+1</td><td>66.67</td></tr>
+                <tr><td>5</td><td>Internacional</td><td>10</td><td>5</td><td>3</td><td>+1</td><td>66.67</td></tr>
+                </tbody>
+              </table>
+              <p class="api-note">// 5 de 16 times · calculado dos 40 jogos encerrados no seed do projeto</p>
+            </div>
+            <ul class="api-routes">
+              <li><span>POST</span>/login</li>
+              <li><span>GET</span>/matches?inProgress=true</li>
+              <li><span>POST</span>/matches</li>
+              <li><span>PATCH</span>/matches/:id/finish</li>
+              <li><span>GET</span>/leaderboard/home</li>
+              <li><span>GET</span>/leaderboard/away</li>
+            </ul>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section id="experiencia" class="section wrap">
+      <header class="section-head">
+        <p class="eyebrow"><span>03</span> experiência</p>
+        <h2>Experiência e formação</h2>
+      </header>
+
+      <ol class="exp">
+        <li class="reveal">
+          <span class="when">abr 2025 — abr 2026</span>
+          <div>
+            <h3>Residente de tecnologia <span>· EmbarcaTech (Softex/IFRN)</span></h3>
+            <p>Residência remunerada de 1.040 h. Em equipe, construí a API em Node.js e Express que recebe as leituras de crachás RFID e grava no PostgreSQL, com processamento em lote para os registros que chegam depois de períodos offline, e trabalhei no firmware do ESP32. O sistema foi avaliado por banca, apresentado à Softex e publicado na Revista FT.</p>
+            <ul class="tags"><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Jest</li><li>Swagger</li><li>ESP32</li></ul>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="when">ago 2024 — 2027.1</span>
+          <div>
+            <h3>Tecnologia em Sistemas para Internet <span>· IFRN Natal-Zona Leste</span></h3>
+            <p>5º período. Na graduação construí o E-Play e estou finalizando o Zé Resolve. Também concluí os cursos de Versionamento com Git (40 h, 2025) e Introdução à Programação em Java (60 h, 2026).</p>
+            <ul class="tags"><li>Next.js</li><li>Flutter</li><li>FastAPI</li><li>Java</li><li>Git</li></ul>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="when">2022</span>
+          <div>
+            <h3>Desenvolvimento Web <span>· Trybe</span></h3>
+            <p>Formação prática de cerca de 1.500 h: fundamentos da web, front-end com React, back-end com Node.js, bancos de dados, testes e Ciência da Computação.</p>
+            <ul class="tags"><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Node.js</li><li>MySQL</li><li>MongoDB</li></ul>
+          </div>
+        </li>
+      </ol>
+
+      <div class="exp-foot">
+        <a class="more" href="assets/cv/Curriculo_Thalys_Rodrigues.pdf" target="_blank" rel="noopener">Ver currículo completo →</a>
+      </div>
+      <details class="certs">
+        <summary>Certificados e comprovações <span>(11 PDFs)</span></summary>
+        <ul>
+          <li><a href="assets/certificates/residencia-1040h.pdf" target="_blank" rel="noopener">Declaração da residência · 1.040 h</a></li>
+          <li><a href="assets/certificates/fic-residencia-240h.pdf" target="_blank" rel="noopener">FIC em Residência Tecnológica · 240 h</a></li>
+          <li><a href="assets/certificates/sistemas-embarcados-160h.pdf" target="_blank" rel="noopener">FIC em Sistemas Embarcados · 160 h</a></li>
+          <li><a href="assets/certificates/publicacao-artigo.pdf" target="_blank" rel="noopener">Certificado de publicação · Revista FT</a></li>
+          <li><a href="assets/certificates/trybe-web.pdf" target="_blank" rel="noopener">Trybe · Desenvolvimento Web · ~1.500 h</a></li>
+          <li><a href="assets/certificates/trybe-fundamentos.pdf" target="_blank" rel="noopener">Trybe · Fundamentos</a></li>
+          <li><a href="assets/certificates/trybe-frontend.pdf" target="_blank" rel="noopener">Trybe · Front-End</a></li>
+          <li><a href="assets/certificates/trybe-backend.pdf" target="_blank" rel="noopener">Trybe · Back-End</a></li>
+          <li><a href="assets/certificates/trybe-computacao.pdf" target="_blank" rel="noopener">Trybe · Ciência da Computação</a></li>
+          <li><a href="assets/certificates/git-40h.pdf" target="_blank" rel="noopener">Versionamento com Git · 40 h</a></li>
+          <li><a href="assets/certificates/java-60h.pdf" target="_blank" rel="noopener">Introdução à Programação em Java · 60 h</a></li>
+        </ul>
+        <p class="note">Algumas cópias têm dados pessoais ocultos; são cópias de consulta.</p>
+      </details>
+    </section>
+
+    <!-- PUBLICAÇÕES -->
+    <section id="publicacoes" class="section wrap">
+      <header class="section-head">
+        <p class="eyebrow"><span>04</span> publicações</p>
+        <h2>Escrita e apresentações</h2>
+      </header>
+      <ul class="pubs">
+        <li class="reveal">
+          <a href="https://www.revistaft.com/ft/article/view/657" target="_blank" rel="noopener">
+            <span class="when">30 abr 2026</span>
+            <span class="pub-title">Sistema IoT para monitoramento de equipes em obras de infraestrutura remotas</span>
+            <span class="pub-meta">artigo · Revista FT · coautor</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a href="https://www.youtube.com/watch?v=nUgU5FdD-8o" target="_blank" rel="noopener">
+            <span class="when">nov 2026</span>
+            <span class="pub-title">Zé Resolve: demonstração narrada do app e da API</span>
+            <span class="pub-meta">vídeo · YouTube · 3 min 30 s</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section wrap contact reveal">
+      <p class="eyebrow"><span>05</span> contato</p>
+      <h2>Vamos conversar?</h2>
+      <p class="lead">Natal/RN ou remoto. Respondo rápido.</p>
+      <a class="mail" href="mailto:tgbr66@gmail.com">tgbr66@gmail.com</a>
+      <div class="actions center">
+        <a class="btn primary" href="assets/cv/Curriculo_Thalys_Rodrigues.pdf" download>Baixar currículo</a>
+        <a class="btn" href="https://www.linkedin.com/in/thalysrd/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/ThalysRD" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>Feito à mão em HTML, CSS e JavaScript, sem framework.</p>
+    <p>© 2026 Thalys Rodrigues</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
