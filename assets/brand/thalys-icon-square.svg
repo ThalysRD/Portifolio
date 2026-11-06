@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>thalys.dev</title>
+  <!-- Placa quadrada (apple-touch-icon, ícones do manifesto): o sistema arredonda os cantos -->
+  <rect width="256" height="256" fill="#07090c"/>
+  <path fill="#eef2f5" d="M40.3 50.6 L177.9 50.6 L177.9 95.3 L131.4 95.3 L131.4 202 L86.7 202 L86.7 95.3 L40.3 95.3Z"/>
+  <path fill="#00f5a0" d="M150.4 169.3 L215.7 169.3 L215.7 202 L150.4 202Z"/>
+</svg>

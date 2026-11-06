@@ -38,6 +38,15 @@ assets/
   projects/     imagens dos projetos
   cv/           currículo em PDF
   certificates/ certificados (cópias de consulta, algumas com dados pessoais ocultos)
+  icons/        ícones do manifesto (192, 512 e maskable)
+  brand/        marca T-cursor em SVG (fundo escuro, fundo claro, favicon e placa quadrada)
+favicon.svg, favicon.ico, apple-touch-icon.png, site.webmanifest   ícones da aba e do celular
 ```
+
+## Marca
+
+O ícone é o T de Thalys com o bloco do cursor que pisca no `thalys.dev_` do topo da página:
+T em `#eef2f5`, cursor em `#00f5a0`, placa em `#07090c`. A versão da aba tem traço mais grosso
+e um vão maior entre o T e o cursor para continuar legível a 16 px.
 
 O vídeo do Zé Resolve só carrega o player do YouTube (`youtube-nocookie.com`) quando a pessoa clica.

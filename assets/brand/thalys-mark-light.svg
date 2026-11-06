@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>thalys.dev</title>
+  <!-- Mestre para fundo claro · T-cursor. Grade: traço 46, barra horizontal 44 (afinada 2 para compensação óptica),
+       cursor 70×30 na linha de base. Centrado em x (38/38) e 2 unidades acima do centro geométrico. -->
+  <path fill="#07090c" d="M38 50H178V94H131V202H85V94H38Z"/>
+  <path fill="#00a86e" d="M148 172H218V202H148Z"/>
+</svg>
